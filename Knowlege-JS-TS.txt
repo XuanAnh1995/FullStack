@@ -212,6 +212,283 @@ const nick = function (tham số nếu có, cách nhau bằng dấu phẩy nếu
 }
 
 nick();	// RUN hàm qua nick
+====================================
+HÀM MŨI TÊN - ARROW FUNCTION
+- ANONYMOUS FUCNTION ĂN BỚT THÊM VÀI KÍ TỰ -> TRỞ THÀNH HÀM MŨI TÊN
+
+// ANONYMOUS FUNCTION 
+const nick = (tham số nếu có, cách nhau bằng dấu phẩy nếu nhiều tham số) {
+	nhóm lệnh code bằng ngôn ngữ JS nằm ở đây;
+	return giá-trị-trả-về; 
+}
+
+// ARROW FUNCTION => 	// JAVA  ->		C# =>
+const nick = (tham số nếu có, cách nhau bằng dấu phẩy nếu nhiều tham số)  => {
+	nhóm lệnh code bằng ngôn ngữ JS nằm ở đây;
+	return giá-trị-trả-về; 
+}
+
+// HÀM BỊ ĂN BỚT CÁI TÊN GỐC, ĂN BỚT CHỮ FUNCTION, TÁCH THAM SỐ VÀ THÂN HÀM (BODY) BẰNG MŨI TÊN ĐÔI 
+// HÀM ANONYMOUS ĂN BỚT VÀI THỨ, GỌI LÀ HÀM ARROW
+
+
+>>>>>>>>>>> KỸ THUẬT RÚT GỌN HÀM ẨN DANH TRỞ THÀNH HÀM MŨI TÊN , MŨI TÊN CHỈ CÒN CÁI DÂY NỊT - ĂN BỚT "KO ĂN ĐƯỢC THÊM"
+
+const nick = (các tham số) => {code thân hàm};
+
+1. ĂN BỚT PHẦN THAM SỐ 
+- NẾU HÀM CÓ TỪ 2 THAM SỐ TRỞ LÊN, GIỮ NGUYÊN KO ĂN BỚT
+Ví dụ: (a, b) => (a, b, c)
+- NẾU HÀM CÓ ĐÚNG 1 THAM SỐ, DÙNG NGOẶC () HOẶC KO DÙNG ĐỀU OK
+(r) =>
+r => 
+
+const f = r => {return 3.14 * r * r; }
+
+2. ĂN BỚT PHẦN THÂN HÀM
+- NẾU THÂN HÀM CÓ NHIỀU HƠN 1 DÒNG LỆNH, GIỮ NGUYÊN
+- NẾU THÂN HÀM CHỈ CÓ DUY NHẤT 1 LỆNH, BỎ {} , BỎ RETURN
+
+const f = r => {return 3.14 * r * r; }
+
+const f = r => 3.14 * r * r;	// EXPRESSION HÀM TỰA NHƯ 1 BIỂU THỨC !!!
+
+>>>> JAVA, C# CÙNG CÁCH THỨC !!!!!!!!!!!!
+
+VI: ỨNG DỤNG CỦA HÀM MŨI TÊN -ARROW FUNCTION - CALLBACK FUNCTION | LẬP TRÌNH HÀM: FUNCTIONAL PROGRAMMING - HÀM TRUYỀN VÀO HÀM
+
+- JAVA, C#, C++: CLASS, OBJECT : FEILD/PROPERTY / ATTRIBUTE + METHOD() 
+--------------------------------------------------------------------------------------------------
+		OOP, CODE NẰM TRONG CLASS
+		OOP - OBJECT ORIENTED PROGRAMMING LANGUAGE
+		OOP - OBJECT ORIENTED PARADIGM
+
+- C, PASCAL, ... : CODE BẮT ĐẦU TỪ HÀM, HÀM NHẬN VÀO THAM SỐ LÀ NHỮNG GIÁ TRỊ PRIMITIVE
+----------------------------------------------------------------------------------------------------
+		PROCEDURAL PROGRAMMING LANGUAGE - NGÔN NGỮ LẬP TRÌNH THỦ TỤC
+
+- JAVA MÀ CÓ 	LAMBDA EXPRESSION				-> STREAM-API
+- C# MÀ CÓ 	DELEGATES, LAMBDA EXPRESSION		-> LINQ
+			BỔ SUNG THÊM KHẢ NĂNG LẬP TRÌNH HÀM - FUNCTION PROGRAMMING
+
+- JAVASCRIPT : 	NATIVE FUNCTIONAL PROGRAMMING LANGUAGE(DR. SCHEME - NGÔN NGỮ THUẦN LẬP TRÌNH HÀM TRUYỀN CẢM HỨNG !!!)
+
+
+-> TRONG JAVASCRIPT, JS, HÀM CŨNG ĐƯỢC XEM LÀ 1 LOẠI DATA, 1 LOẠI OBJECT
+VÍ DỤ: 	function f(???) {...}
+		hàm được lưu trong RAM, vùng RAM này có đặc trưng : tên, số tham số, trả về, code ...
+
+VÌ LÀ 1 OBJECT, 1 DATA, 1 "VALUE" , NÊN CÓ 1 BIẾN GÁN CHO NÓ (BIẾN LÀ TÊN GỌI CHO 1 "VALUE") 
+VÍ DỤ: 	int yob = 2005;
+		double total = 5.000.00;
+
+JAVA =================================
+Student s = new Student("SE01", "An Nguyễn", 2005, 8.9);
+----------------------------------------------------------------------
+const f     = function f(???) {...}
+
+public void printStudent(Student xxx){
+	
+}
+
+// gọi hàm
+printStudent(s)
+
+JAVASCRIPT===============================
+const f     = function fXXX(???) {...}
+const yob = 2005;
+
+f() gọi hàm 
+
+function fYYY(num) {				function fZZZ(f) {
+								// cứ làm gì bạn muốn, 
+								// lát hồi gọi lại mày f()
+								// callback
+	return num = num + 5; 			f();	// gọi hàm, f trỏ đến 
+} // num là con số				}
+
+fYYY(yob);
+
+* CHALLENGE: VIẾT 1 HÀM IN RA CÁC CON SỐ TỪ 1...10
+- C1: GỌI TRỰC TIẾP NÓ
+- C2: BIẾN NÓ THÀNH CALLBACK FUNCTION
+
+const listInt = function printList() {
+	
+	console.log("The list of numbers from 1 to 10:  ");
+		
+	for(let i = 1; i <= 10; i++){
+		console.log(i);
+	}
+}
+printManager(listInt);	// hậu trường: 	f = listInt nhận tham số vào hàm
+				// 			f() = listInt()
+
+// HÀM NHẬN VÀO HÀM KHÁC
+// TUI BIẾT RẰNG CÓ NHỮNG HÀM KHÁC CÓ THỂ IN  TỐT, TUI GỌI HẮN
+function printManager(f) {
+    console.log("Do something for this function itself !!! Xử lý riêng hàm");
+
+	// nhớ rằng, gọi ngược lại, triệu hồi thằng ku hàm f
+	f();	// f là hàm ko tham số đưa vào
+}
+
+// VI DIỆU, MANAGER TRIỆU HỒI HÀM BÊN NGOÀI ĐỂ IN
+printManager(???);
+
+// TUI MUỐN IN CÁC SỐ CHẴN TỪ 1 ĐẾN 100!!! GỌI QUA PRINTMANAGER() NHEN!!!!!!!!!!! 
+// CẤM SỬA PRINTMANAGER()
+// SOLID : O : OPEN/CLOSED PRINCIPLE : CỞI MỞ VỚI VIỆC THÊM MỚI, ĐÓNG CỬA VỚI VIỆC CHỈNH SỬA CÁI ĐANG CÓ
+
+
+// CHALLENGE: IN RA CÁC SỐ TỪ 1 ĐẾN N
+const listN = n => {
+	console.log("The list of numbers from 1 to " + n);
+	for(let i = 1; i <= n; i++){
+		console.log(i);
+	}
+}
+
+listN(1000);
+
+// HÃY CHƠI STYLE printManager();
+// HÀM ĐIỀU PHỐI NHẬN HÀM KHÁC ĐI VÀO, MÀ HÀM KHÁC, CALLBACK LÚC NÀY CÓ THÊM THAM SỐ
+
+function printManager(f) {
+	f(200);
+}
+
+printManager(listN);
+
+>>>>>>>>>>> ỨNG DỤNG HÀM CALLBACK - HÀM CALLBACK DÙNG CHO VIỆC GÌ
+
+- KĨ THUẬT VIẾT HÀM NHẬN VÀO 1 HÀM KHÁC, CÒN GỌI LÀ LẬP TRÌNH HÀM, FUNCTIONAL PROGRAMMING
+- HÀM ĐƯỢC ĐƯA VÀO HÀM KHÁC QUA THAM SỐ THÌ HÀM ĐƯỢC GỌI LÀ CALLBACK FUNCTION
+
+- DÙNG CALLBACK LÀ KĨ THUẬT THIẾT KẾ HÀM CHÍNH (GỌI  CALLBACK, NHẬN CALLBACK) DỄ DÀNG MỞ RỘNG TRONG TƯƠNG LAI, HÀM CHÍNH ĐƯỢC THIẾT KẾ ĐỂ XỬ LÝ CHO NHỮNG NHU CẦU ĐÃ BIẾT , CHƯA BIẾT CŨNG ĐƯỢC LUÔN
+
+VÍ DỤ: HÀM PRINTMANAGER() ĐÃ CÓ THỂ , IN SỐ CHẴN, IN SỐ LẺ, ...
+HÀM CHÍNH NHẬN VÀO HÀM BÊN NGOÀI, HÀM BÊN NGOÀI CHÍNH LÀ THỨ MỞ RỘNG CHO HÀM CHÍNH
+HÀM CHÍNH NHẬN VÀO HÀM BÊN NGOÀI, VẬY NÓ CÓ THỂ CHƠI VỚI ĐA DẠNG HÀM BÊN NGOÀI THẬM CHÍ CHƯA BIẾT HÀM NGOÀI LÀM ĐƯỢC GÌ -> HÀM CHÍNH CHƠI VỚI TƯƠNG LAI
+
+>>>> VÍ DỤ ĐỜI THƯỜNG:
+QUÁN BÁN PHỞ CÓ CHỊ CHỦ QUÁN LÀM TÔ PHỞ PHỤC VỤ KHÁCH HÀNG - HÀM MAKE-TÔ-PHỞ()
+
+HÀM MAKE-TÔ-PHỞ() -> RETURN TÔ-PHỞ
+
+"CHỊ CHỦ, CHO EM TÔ PHỞ"					1 HÀM MAKE-TÔ-PHỞ() LÀ ĐỦ
+
+
+
+"CHỊ CHỦ, CHO EM TÔ PHỞ NƯỚC TRONG "
+
+"CHỊ CHỦ, CHO EM TÔ PHỞ NƯỚC TRONG, KO HÀNH"		HÀM MAKE-TÔ-PHỞ(OPTION???)
+
+"CHỊ CHỦ, CHO EM TÔ PHỞ TÁI NẠM, KO HÀNH "
+
+"CHỊ CHỦ, CHO EM TÔ PHỞ TÁI NẠM, GẦU, NHIỀU BÁNH"
+"..."
+
+
+HÀM MAKE-TÔ-PHỞ(OPTION???)  {
+
+	IF(OPTION == NƯỚC TRONG) 
+		RETURN TÔ PHỞ NƯỚC TRONG
+	IF(OPTION == NƯỚC TRONG, KO HÀNH) 
+		RETURN ...
+
+	// KO MỞ RỘNG, KO ĐOÁN HẾT NHU CẦU, IF MỚI -> SỬA
+}
+
+HÀM MAKE-TÔ-PHỞ(HÀM-KHÁC-ĐẠI-DIỆN-NHU-CẦU-KHÁCH-HÀNG) {
+	TẠO TÔ PHỞ THEO NHU CẦU
+}
+
+>>>> CHỊ CHỦ CÓ NHIỀU NGUYÊN VẬT LIỆU HÀNH, NGÒ, GIÁ, THỊT, ... NƯỚC DÙNG -> CHỊ SẼ ỦY QUYỀN CHO KHÁCH ĐONG TÔ PHỞ THEO OPTION HỌ THÍCH
+
+>>>> CÓ 1 CÁI HÀM CÓ RẤT NHIỀU DATA NHƯNG NÓ KO BIẾT NÊN TRẢ VỀ THẾ NÀO???
+> CHỜ BÊN NGOÀI ĐƯA  Ý KIẾN, XỬ LÍ CHO
+> HÀM CHÍNH CÓ 1 MẢNG SỐ NGUYÊN 
+
+const arr = [5, 10, 15, 20, 1, 3, 5, 7, 9, 2, 4, 6, 8];
+
+> A: TUI MUỐN BÌNH PHƯƠNG TẤT CẢ
+> B: TUI MUỐN CHIA ĐÔI MỖI GIÁ TRỊ
+> C: TUI MUỐN LẤY RA CÁC SỐ CHẴN
+> D: TUI MUỐN LẤY RA SỐ CHIA HẾT CHO 5
+.....
+
+
+VII: DESTRUCTURING: PHÂN RÃ 1 THỨ PHỨC TẠP BÊN TRONG ĐỂ LẤY NHỮNG MẢNH VỤN, BẺ GÃY 1 MẢNG, BẺ GÃY 1 OBJECT, CÁCH LẤY GIÁ TRỊ Ở TRONG MẢNG, TRONG OBJECT THẬT NHANH !!!!!!!!!!
+
+- MẢNG VÀ OBJECT LÀ NHỮNG ĐỐI TƯỢNG MÀ NÓ CHỨA BÊN TRONG NHIỀU THÔNG TIN ĐỂ LẤY RA CÁC THÔNG TIN TRONG MẢNG, TRONG OBJECT, LẤY RA VÀ ĐỔ VAÒ BIẾN, THÌ TA CÓ 2 CÁCH LẤY
+
+1. MẢNG
+
+ const arr = [5, 10, 15, 20];
+
+* LẤY PHẦN TỬ MẢNG ĐỂ XÀI - STYLE KIỂU TRUYỀN THỐNG
+
+const a1 = arr[0];
+const a2 = arr[1];
+const a3 = arr[2];
+const a4 = arr[3];
+
+console.log("Các giá trị của mảng theo kiểu truyền thống: ", a1, a2, a3, a4);
+
+* LẤY PHẦN TỬ MẢNG ĐỂ XÀI - STYLE KIỂU HIỆN ĐẠI - PHÂN RÃ CẤU TRÚC MẢNG, GÁN NHANH VÀO 1 LOẠT BIẾN
+
+const [e1, e2, e3, e4] = arr;	
+
+// ~~~ const [count, setCount] = useState(0)
+
+// .jsx
+
+3. OBJECT
+
+const s = {id: "SE01", name: "An Nguyễn", yob: 2005};
+
+* LẤY INFO TRONG OBJECT THEO STYLE CỔ ĐIỂN TRUYỀN THỐNG
+
+const id = s.id;
+const name = s.name;
+const namSinh = s.yob;
+
+console.log("Thông tin sinh viên (Style truyền thống): ", id, name, namSinh);
+
+* LẤY INFO TRONG OBJECT ĐỂ DÙNG - THEO STYLE HIỆN ĐẠI - PHÂN DÃ CẤU TRÚC OBJECT, GÁN NHANH VÀO 1 LOẠT BIẾN
+
+// const [e1, e2, e3, e4] = arr;
+
+//			alias tên giả cho tên gốc yob
+const {id, yob: namSinh, name} = s;
+
+console.log("Thông tin sinh viên (Style hiện đại): ", id, name, namSinh);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
