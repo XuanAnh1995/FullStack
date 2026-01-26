@@ -460,7 +460,7 @@ console.log("Thông tin sinh viên (Style truyền thống): ", id, name, namSin
 
 // const [e1, e2, e3, e4] = arr;
 
-//			alias tên giả cho tên gốc yob
+//		      alias tên giả cho tên gốc yob
 const {id, yob: namSinh, name} = s;
 
 console.log("Thông tin sinh viên (Style hiện đại): ", id, name, namSinh);
