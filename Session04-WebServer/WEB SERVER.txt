@@ -1,0 +1,95 @@
+WEB SERVER
+* TRANG WEB TĨNH:	
+	.HTML -> STATIC WEB, WEB TĨNH 
+	TRANG .HTML XUẤT HIỆN TRONG TRÌNH DUYỆT CỦA MÌNH THEO 2 CÁCH: 
+- CÓ SẴN TRÊN Ô ĐĨA, MÌNH DOUBLE CLICK TRONG TRÌNH DUYỆT; 
+	FILE: C:/... .html
+	
+	KĨ THUẬT DUYỆT FILE HTML Ở MÁY LOCAL, MỞ TẬP TIN BÌNH THƯỜNG 
+	- TRONG TRANG .HTML CÓ <script type = "module" ...> THÌ BÁO LỖI NGAY KO CHẠY ĐƯỢC HTML LUÔN -> CORS 
+
+	KĨ THUẬT DUYỆT FILE HTML LẤY Ở 1 MÃY TRÊN MẠNG
+	MÁY TRÊN MẠNG: LÀM SAO ĐỊNH VỊ MÁY ĐÓ -> MỚI VÀO Ổ ĐĨA NÓ LẤY FILE 
+	- ĐỊNH VỊ MÁY TRÊN MẠNG QUA ĐỊA CHỈ IP (IPV4, IPV6)
+	- ÁNH XẠ CON SỐ IP THÀNH TÊN GỌI DỄ THƯƠNG 	... .com
+											... .org
+											... .xxx											domain name - tên miền
+
+	CÁCH THỨC REQUEST, RESPONSE TỚI/TỪ 1 MÁY CHỦ SERVER ĐỂ LẤY TRANG WEB 	VỀ GỌI LÀ GIAO THỨC GIAO TIẾP HTTP, HTTPS
+	HTTP://
+	HTTPS://
+	-> TỚI TRANG WEB -> VỀ MÁY MÌNH -> VÀO TRÌNH DUYỆT -> SHOW
+
+	PHẦN MỀM LẮNG NGHE, PHỤC VỤ YÊU CẦU ĐÒI TRANG WEB -> WEB SERVER
+
+	ĐỂ THỬ NGHIỆM CÙNG MÔ HÌNH, NHƯNG Ở MÁY LOCAL, TA CÀI WEB SERVER Ở MÁY TA LOCALHOST://	DÙ TRANG Ở MÁY MÌNH, NHƯNG LẤY GỌI NÓ THEO CHUẨN WEB. GỌI QUA GÕ Ở Ô URL NHƯ DUYỆT WEB CHUẨN
+	
+	CÀI SERVER Ở LOCAL, THÌ PHẢI CHỈ CHO NÓ, NƠI LẤY TRANG WEB .HTML
+	LÚC NÀY LẤY TRANG NHƯ DUYỆT WEB : GÕ URL KÈM LOCALHOST
+
+-----------------------------------------------------------
+* VITE
+* SERVE
+-----------------------------------------------------------
+- 2 CHÁU VITE, SERVE LÀ 2 MÓN DÀNH CHO DÂN DEV REACT, FE ĐỂ BIẾN MÁY TÍNH, THƯ MỤC CHỨA TRANG HTML, .JS TRỞ THÀNH NƠI PHỤC VỤ WEB, DUYỆT WEB
+- 2 CHÁU NÀY LÀ APP NHỎ, TOOL NHỎ PHỤC VỤ WEB TĨNH, ĐƯỢC VIẾT BẰNG .JS CHẠY TRÊN NỀN NODEJS
+- MUỐN XÀI 2 CHÁU NÀY, THÌ PHẢI DOWNLOAD  VỀ MÁY, CÓ 3 CÁCH DOWNLOAD
+- DOWNLOAD VỀ  CÀI VÀO MÁY, PROJECT NÀO XÀI CŨNG ĐƯỢC, ĐỨNG  ĐÂU GỌI CŨNG ĐƯỢC -> CHẾ ĐỘ GLOBAL
+
+> _	npm install -g vite
+> _	npm install --global vite
+> _	npm i -g vite
+
+TẢI VỀ: C:\USERS\<ACCOUNT-LOGIN>\APPDATA\ROAMING\NPM
+
+GỠ :
+> _	npm r -g vite	// Xóa
+
+>_ 	npm i -g serve
+
+>_	vite --port 6969
+>_	serve -l 6789
+
+============================================
+NPM		NPX
+KHI CÀI NODE, TA CÓ NHIỀU MÓN ...
+- NODE.EXE LÀ MÔI TRƯỜNG RUNTIME V8 TỪ TRÌNH DUYỆT ĐI XUỐNG CHẠY Ở NGOÀI TRÌNH DUYỆT 
+- NPM LÀ 1 TOOL VIẾT BẰNG JS , CHẠY TRÊN NỀN NODE; TOOL NÀY GIÚP 
+	- QUẢN LÝ CÁC PACKAGE, TẢI CÁC THƯ VIỆN LẬP TRÌNH ~ MAVEN CỦA JAVA
+	- CHẠY ĐƯỢC CÁC APP/LỆNH .JS Ở LOCAL NHƯNG KO GỌI TRỰC TIẾP ĐƯỢC, MÀ LỆNH CHẠY NÀY PHẢI KHAI BÁO Ở FILE PACKAGE.JSON Ở MỤC SCRIPT
+	CHẠY VITE: NPM RUN DEV -> NPM PHẢI MÒ VÀO PACKAGE.JSON -> SCRIPTS -> DEV -> THẤY VITE RUN 
+
+- NPX (Node Package Execute): THỰC THI TRỰC TIẾP ĐƯỢC CÁC APP MÀ KO CẦN CHẠY VÒNG QUA SCRIPT NHƯ THẰNG NPM
+
+>_	npx vite
+// ngộ nhỡ chưa cài vite, tự ĐI TẢI VỀ : 
+// TẢI VỀ ĐÂU? 		C:\USER\<>\APPDATA\LOCAL\NPM-CACHE\_npx
+
+============================================
+>_	npm r -g vite 		// gỡ ở global  
+	
+
+CÁCH 3: SERVER ĐI KÈM VỚI PROJECT, NẰM SẴN Ở THƯ MỤC Node_Modules CỦA MỖI PROJECT VITE MÌNH TẠO RA LÚC DÙNG CÂU LỆNH 
+>_ npm create vite@latest my-app --template react
+	
+NPM RUN DEV
+
+NPX VITE --PORT 6969
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

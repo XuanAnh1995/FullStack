@@ -1,0 +1,73 @@
+I:	WEB SERVER - REVIEW THÊM VÀI MÓN
+1.	WEB SERVER LÀ PHẦN MỀM CHẠY 1 MÁY 
+		- MÁY MÌNH - ĐỂ TEST WEB APP CỦA MÌNH (2 VAI TRÒ: SERVER/CLIENT)
+		- MÁY TRÊN MẠNG - MÁY CHỦ
+	ĐỂ PHỤC VỤ CÁC NHU CẦU DUYỆT WEB, LẤY/TẢI TRANG WEB TỪ MÁY VỀ TRÌNH DUYỆT MÁY MÌNH
+	
+	- CẦN WEBSERVER  PHỤC VỤ NHU CẦU TẢI WEB CỦA NHIỀU USER TRÊN THẾ GIỚI, VÀ VÌ MÁY CHỨA WEB Ở XA 
+	- TRÊN MÁY MÌNH, NẾU CÀI WEB SERVER THÌ CHO CẢM GIÁC Y CHANG DUYỆT WEB THẬT, NÓ GIẢI QUYẾT ĐƯỢC CÂU CHUYỆN CHẠY FILE SCRIPT ĐI KÈM TRANG WEB
+	- NẾU KO CÓ WEB SERVER, MÌNH XEM TRANG WEB MÁY TÍNH = DOUBLE CLICK TRÊN HTML.	->    TRÌNH DUYỆT MỞ HTML Ở URL 	-> FILE: C:\...\...\HTML
+			KO CHẠY ĐƯỢC NHIỀU FILE .JS 	-> CORS 
+
+* CÁC WEB SERVER NỔI TIẾNG:
+- HÀNG KHỦNG: NGINX, IIS, HTTP APACHE SERVER, TOMCAT
+- HÀNG DÀNH CHO MÔI TRƯỜNG DEV, LOCAL, MÁY MÌNH: VITE, SERVE, WEBPACK-DEV-SERVER, NODEMON (HMR-HOT MODULE REPLACEMENT) 
+	- CODE BẰNG JS, TẬP TIN .JS. 
+	- MUỐN CHẠY 3 KU NÀY THÌ CẦN NODE RUNTIME
+	- 3 KU NÀY CÓ HMR - HOT MODULE REPLACEMENT (Y CHANG NHƯ DEV TOOL LÚC MÌNH [X] KHI TẠO SPRING BOOT PROJECT). KHI NHẤN NÚT [SAVE] TRONG PROJECT REACT (TRONG VS.CODE KHI SANG CODE). TỰ DEPLOY PHẦN SỬA LÊN SERVER NÀY ĐỂ "TỰ F5 - HOT RELOAD- NÓNG HỔI VỪA SỬA LÀ THẤY CÓ HIỆU QUẢ LIỀN" TRANG WEB BÊN TRÌNH DUYỆT NHỮNG GÌ MÌNH SỬA SẼ THẤY LUÔN Ơ TRÌNH DUYỆT
+
+3. CÀI ĐẶT NÓ NHƯ THẾ NÀO? CÓ 3 CÁCH CÀI ỮNG VỚI 3 CÁCH DÙNG
+3.1:  CÀI VÀO VÀ ĐỨNG Ở ĐÂU XÀI CŨNG ĐƯỢC, ÁP DỤNG CHO MỌI PROJECT, MỌI USER LOGIN VÀO MÁY CÀI
+* CHẾ ĐỘ CÀI GLOBAL --global -g
+* CHỈ BIẾN MẤT KHI MÌNH CHỦ ĐỘNG GỠ, CÀI LẠI WINDOWS
+* CÀI XONG NẰM Ở : 	C:\USER\<login name>\APPDATA\ROAMING\NPM\NODE_MODULE
+
+* CÀI: 
+	npm install --global vite		npm install --global serve
+	npm install -g vite			npm install -g serve
+	npm i --global vite			npm i --global serve
+	npm i -g vite				npm i -g serve
+
+THÊM @latest cài version mới nhất
+
+* GỠ:
+	npm r -g vite				npm r -g serve
+
+* XÀI: ĐỨNG Ở THƯ MỤC PPOJECT, THƯ MỤC BUILD, THƯ MỤC HTML GÕ:
+	vite						serve
+	vite --port 3979				serve -l 6969
+	vite --port 2204				serve -l 6789
+
+
+
+3.2: CÀI TẠM THỜI, DÙNG TAKE-AWAY, TẮT 3 KU NÀY THÌ 3 KU BIẾN MẤT LUÔN, PHẢI TẢI, CÀI LẠI (TRỪ PHI DÙNG CACHE)
+* CÀI XONG NẰM : C:\USER\<LOGIN NAME>\APPDATA\LOCAL\NPM-CACHE\_NPX
+---------------------------------------------------------------------------------------------
+NODE							NPM						NPX
+---------------------------------------------------------------------------------------------
+RUNTIME CHẠY JS NGOÀI BROWSER, CÔNG CỤ NỀN ĐỂ CHẠY CÁC APP VIẾT BẰNG JS	
+NODE PACKAGE MANAGER		
+NODE PACKAGE EXECUTE
+
+	
+3.3: CÀI LÂU DÀI, NHƯNG ĂN THEO TỪNG PROJECT -> DÂN DEV ƯA DÙNG!!!
+* CÀI XONG NÓ NẰM Ở: <PROJECT>/NODE_MODULES/<TOOL TƯƠNG ỨNG>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
