@@ -45,14 +45,216 @@ THÊM @latest cài version mới nhất
 ---------------------------------------------------------------------------------------------
 NODE							NPM						NPX
 ---------------------------------------------------------------------------------------------
-RUNTIME CHẠY JS NGOÀI BROWSER, CÔNG CỤ NỀN ĐỂ CHẠY CÁC APP VIẾT BẰNG JS	
-NODE PACKAGE MANAGER		
-NODE PACKAGE EXECUTE
+NODE: 	RUNTIME CHẠY JS NGOÀI BROWSER, CÔNG CỤ NỀN ĐỂ CHẠY CÁC APP VIẾT BẰNG JS CÒN ĐƯỢC GỌI LÀ RUNTIME CHẠY APP JS. TỪ V8 MÀ RA
 
+	
+NPM:		NODE PACKAGE MANAGER: 
+	- LÀ APP .JS 
+	- CÓ SẴN KHI CÀI NODE
+	- CHẠY NÓ TRÊN NỀN NODE
+	- TẢI, DOWNLOAD, XÓA CÁC THƯ VIỆN JS - DEPENDENCY (GIỐNG MAVEN BÊN JAVA)	
+	- CÓ THỂ DÙNG NPM ĐỂ RUN CÁC .JS APP
+	- NPM RUN <TÊN-APP-PHẢI-ĐƯỢC-KHAI-BÁO-TRONG-FILE-PACKAGE.JSON>
+		 KO CHO RUN TRỰC TIẾP TRÊN APP
+		NPM VITE		// SAI QUÁ SAI	!!!
+		NPM SERVE	// SAI QUÁ SAI	!!!
+		NPM RUN DEV	// OKI
+
+		
+NPX:		NODE PACKAGE EXECUTE
+	- LÀ APP .JS
+	- CÓ SẴN KHI CÀI NODE
+	- CHẠY NÓ TRÊN NỀN NODE
+	- DÙNG NPX CHẠY TRỰC TIẾP CÁC TOOL APP .JS
+	- NPX VITE	// OK
+	- NPX SERVE	// OK
+	TỰ ĐI TẢI TOOL VỀ VÀ THẢ VÀO THƯ MỤC CACHE VÀ RUN TOOL 1 LẦN  DUY NHẤT 
 	
 3.3: CÀI LÂU DÀI, NHƯNG ĂN THEO TỪNG PROJECT -> DÂN DEV ƯA DÙNG!!!
 * CÀI XONG NÓ NẰM Ở: <PROJECT>/NODE_MODULES/<TOOL TƯƠNG ỨNG>
 
+> PHẢI XÀI TẬP TIN PACKAGE.JSON, HOẶC NPX VẪN OKIE
+
+NPM CREATE VITE@LATEST TÊN-APP-SẼ-LÀ-THƯ-MỤC-MỚI-TRONG-WORKSPACE --TEAMPLATE REACT
+
+npm create vite@latest fruit-world-cmd-jsx --template react
+npm create vite@latest fruit-world-ps-jsx --template react
+npm create vite@latest fruit-world-vscode-jsx --template react
+
+> TẬP TIN PACKAGE.JSON ~~~ POM.XML TRONG MAVEN PROJECT
+- GHI/KHAI BÁO CÁC THƯ VIỆN - DEPENĐENCY, CÁC PACKAGE CẦN DÙNG CHO 2 VIỆC
+ 	- LÚC DEV, LÚC MÌNH CODE APP
+	- LÚC RUN CÁI APP
+- KHI GÕ LỆNH "NPM INSTALL" THÌ NPM TỰ ĐỘNG LÊN TRÊN INTERNET, Ở  WEBSITE NPM.ORG NƠI CHỨA TOÀN BỘ THƯ VIỆN .JS CỦA NHÂN LOẠI (~ MVNREPOSITORY.COM BÊN JAVA, NUGET.ORG BÊN C#)
+- TẢI XONG THẢ VÀO THƯ MỤC NODE_MODULES CỦA PROJECT !!!!!!!!! RẤT TO, TỐN ĐĨA !!!!!!!!! KO ĐƯA THƯ MỤC NÀY LÊN GITHUB DỰ ÁN. THẢ TÊN THƯ MỤC NÀY VÀO .GITIGNORE , TÊN THƯ MỤC NÀO NẰM TRONG .GITIGNORE THÌ THẰNG CU ĐÓ  LẠI LOCAL, KO LÊN SERVER (GITHUB, GITLAB, BITBUKET, ...) 
+
+- THƯ MỤC NODE_MODULES ĐÃ TẢI SẴN VITE VỀ RỒI, NHƯNG CHƯA CÓ SERVE ĐỘ THÊM PACKAGE.JSON ĐỂ TẢI THÊM SERVE VỀ 
+
+>>>>>>>>>>>> CHỨA LỆNH ĐỂ GỌI CÁC TOOL JS QUA LỆNH
+chạy vite server:	chạy global học - chạy vĩnh viễn
+			chạy npx học  - cài nhanh, quên nhanh
+			chạy = npm, ko gọi trực tiếp mà gọi gián tiếp ở package.json 
+
+ 			chạy npx ở project có package.json và thư mục node_modules
+
+->chạy vite:	npm run dev				npm run ngoctrinh
+->chạy serve:							npm run hoaminzy
+
+=================================================
+KĨ THUẬT TẢI 1 THƯ VIỆN, DEPENDENCY TRONG REACT PROJECT
+- SỬA FILE PACKAGE.JSON ~~~ POM.XML TRONG JAVA
+- MỤC DEPENDENCIES, KHAI BÁO THƯ VIỆN VÀ VERSION TƯƠNG ỨNG
+
+KĨ THUẬT ĐÁNH SỐ VERSION CỦA 1 PACKAGE JS, 1 PHIÊN BẢN SOURCE NÓI CHUNG
+- 1 FILE .JS , 1 THƯ VIỆN JS ĐƯỢC ĐÁNH SỐ VERSION GỒM 3 THÀNH PHẦN
+	<major>.<minor>.<patch>
+	<major-version chính, version lớn I.>.<minor-version nhỏ hơn 1.>.<patch -vá-lỗi
+	7						.2					  .4
+
+- TRONG PACKAGE.JSON MÌNH GHI 
+"serve" : "^14.2.5"
+7.2.4		->PHẢI TẢI ĐÚNG VERSION NÀY !!!
+*		->VERSION NÀO CŨNG ĐƯỢC, SẼ LẤY MỚI NHẤT
+		-> NGUY HIỂM, TỪ 7. 8. CÓ THỂ THAY SOURCE CODE THƯ VIỆN, DỄ BỂ APP
+^ 7.2.4	->NGHĨA LÀ DOWNLOAD THẰNG 7. CỨ 7. MÀ CẬP NHẬT THÌ DOWNLOAD 7. 
+			 KO CARE PHẦN ĐUÔI SAU 7
+			KO ĐC WNLOAD 8. 9. ... LATER
+			CHỈ CHƠI HỌ 7.
+
+~7.2.4	->NGHĨA LÀ CHỈ CHẤP NHẬN 7.2.X -> X LÀ PATCH THOẢI MÁI THAY ĐỔI, NHƯNG PHẢI GIỮ 7.2 ; CHỈ CHƠI 7.2
+=====================================================
+
+
+
+II: LÀM QUEN VỚI REACT
+1. REACT LÀ GÌ?
+- LÀ BỘ THƯ VIỆN JAVASCRIPT (LIBRARY) ĐC PHÁT TRIỂN BỚI META (FACEBOOK) GIÚP LÀM WEB APP THEO PHONG CÁCH RICK-CLIENT, PHONG CÁCH CLIENT SIDE RENDERING (CSR)
+- WEB APP CÓ VÀI PHONG CÁCH:
+
+* ICH SERVER
+	SR - SERVER SIDE RENDERING
+	JSP/SERVLET
+	THYMLEAF
+	WEB SERVER HỘC MÁU CHUẨN BỊ TRANG USER BẤM NÚT TRÌNH DUYỆT, SERVER HỘC MÁU CHUẨN BỊ TIẾP TRANG KẾ ...
+	
+	USER		---		BROWSER		---	SERVER
+									- CHUẨN BỊ FULL PAGE
+									- NHIỀU PAGE
+									- XỬ  LÝ BACKEND, CSDL
+
+* RICH CLIENT
+	CSR - CLIENT SIDE RENDERING
+	REACT JS, VUE JS, ANGULA
+	WEB SERVER CHUẨN BỊ 1 TRANG INDEX RỖNG VÀ 1 ĐỐNG	THƯ VIỆN JS (REACT, VUE, ANGULAR) KÈM ĐỐNG CODE JS MÀ DEV TỰ VIẾT
+	ĐƯỢC TẢI HẾT VỀ TRÌNH DUYỆT MÁY USER
+	ĐÁM JS NÀY CHƠI VỚI CÂY DOM Ở MÁY USER
+	LÂU LÂU GỌI BACKEND API ĐỂ ĐỔ JSON VỀ MÁY USER, CHƠI CÂY DOM
+
+	USER	   ---	 BROWSER   ---	FE SERVER  			---			BE SERVER
+						index.html						ASP.NET (C#)
+						<div id="root">				SPRING BOOT 
+					<-----JS (code JS mình viết 			EXPRESS, NEST
+						+ React Lib để render cây DOM ở máy USER)
+						Nếu cần data từ DB <------->Web API
+										JSON
+
+CODE MÌNH VIẾT : 	JS THUẦN
+				JSX VỚI SỰ HỖ TRỢ 
+
+- REACT LIBRARY CUNG CẤP 2 MÓN ĐỒ CHƠI
+1.1: THƯ VIỆN / CÁC HÀM DÙNG CHO DÂN DEV VIẾT CODE 
+	- CODE TẠO TRANG WEB, CODE NÀY VIẾT BẰNG JS THUẦN, HOẶC JSX
+	- CODE TẠO LAYOUT TRANG WEB, 
+	- CODE XỬ LÝ NHỮNG HÀNH ĐỘNG CỦA USER KHI TƯƠNG TÁC VỚI TRANG WEB
+	- CODE ĐI LẤY DATA TỪ NƠI KHÁC VỀ (API)
+	- ...
+
+JSX GIÚP DÂN DEV LÀM APP DỄ DÀNG, VIẾT CODE DỄ DÀNG NHƯNG TRÌNH DUYỆT KO HIỂU ĐƯỢC
+
+JSX PHẢI ĐỔI VỀ JS THUẦN THÌ TRÌNH DUYỆT MỚI HIỂU
+	
+	DEV VIẾT CODE TẠO PAGE DÙNG JSX (JS + XML)
+				|
+				|	TRANSPILE / TRANSPILER: TSC,  ESBUILD, SWC, BABEL
+				|	-> TEST THỬ: VITE, SERVE, 
+				|	HMR - HOT MODULE REPLACEMENT
+				|
+	JS THUẦN CÓ SỬ DỤNG CÁC HÀM THƯ VIỆN CỦA REACT (DIST/ FOLDER)
+				|
+				|	CODE MÌNH THÀNH JS + JS CỦA CHÍNH REACT CAN THIỆP 
+				|	CÂY DOM MÁY USER
+				|
+	TRÌNH DUYỆT : CÂY DOM
+
+1.2: THƯ VIỆN/ CÁC HÀM DÙNG ĐỂ RUN APP MÀ RUN DEV VIẾT RA Ở TRÊN
+
+
+2. JSX LÀ GÌ ???
+==================================================
+JSX LÀ GÌ ???
+1. JSX = JAVA SCRIPT XML 
+
+-JSX LÀ NGÔN NGỮ JS MỞ RỘNG, CHO PHÉP VIẾT HTML TRONG CODE JS, TRONG CODE JS NHÚNG THÊM CÁC TAG HTML, TRONG HTML LẠI LỒNG CODE JS
+- HÀM JS NAY CÓ THỂ TRẢ VỀ 1 NHÓM TAG HTML, 1 CỤM HTML (GỌI LÀ COMPONENT) THÔNG QUA SỬ DỤNG CÚ PHÁP JSX
+
+const msg = <h1>Xin chào</h1>;
+
+function BigMessage(){
+	return <h1>Xin chào</h1>;
+}
+
+function BigMessageDetail() {
+	return (
+		<div>
+			<h1>Xin chào</h1>
+			<h2>My name is giáo.làng</h2>
+		</div>
+	);
+}
+
+function BigMessageDetail() {
+	const yob = 2000;
+	return (
+		<>
+			<h1>Xin chào</h1>
+			<h2>My name is giáo.làng | Age: {2026 - yob}</h2>
+		</>
+	);
+}
+
+2. MỤC ĐÍCH
+- DÙNG ĐỂ MÔ TẢ CÁC " MIẾNG " UI TRÊN TRANG WEB MÌNH - DEVELOPER "DESIGN" RA
+- HÀM JS XỬ LÍ XONG DATA, RENDER RA UI VỚI DATA ĐÃ XỬ LÍ (SỬA DOM), GIÚP LINH HOẠT TRONG VIỆC TẠO WEB APP, WEB PAGE
+
+3. CÚ PHÁP JSX
+- 1 CHUỖI JSX TƯƠNG ĐƯƠNG 1, HAY NHIỀU TAG HTML (LỒNG NHAU, HAY NGANG NHAU) TRỘN LẪN VỚI CODE JS THEO 1 QUY TẮC!
+
+================================================
+
+FAVICON LÀ GÌ?
+- FAVICON : FAVORITE + ICON
+- ẢNH NHỎ, BIỂU TƯỢNG ĐƯỢC ƯA THÍCH, DÙNG LÀM LOGO NHẬN DẠNG, BIỂU TƯỢNG NHẬN DẠNG, NHẬN DẠNG THƯƠNG HIỆU, NHẬN DẠNG WEBSITE APP CỦA BẠN
+- NÓ NẰM  THƯ MỤC GỐC WEB CỦA BẠN KHI DEPLOY - CÙNG TRANG INDEX
+- NÓ LÀ ẢNH HÌNH VUÔNG CÓ KÍCH THƯỚC 16px X 16px, 32px X 32px
+- NÓ LÀ ẢNH PHẦN MỞ RỘNG .ICO	-> BỂ KHI PHÓNG LỚN DO NÓ DỰA TRÊN ĐIỂM ẢNH - ẢNH RASTER VẼ BẰNG PAINT, PHOTOSHOP
+
+- HIỆN NAY GIANG HỒ HAY DÙNG ẢNH CÓ ĐUÔI .SVG MỚI XỊN  - ẢNH NÀY PHÓNG LỚN KO BỂ VÌ NÓ LÀ LOẠI ẢNH VECTOR, ẢNH ĐƯỢC SINH BỞI HÀM TOÁN HỌC
+
+* SVG: SCALABLE VECTOR GRAPHICS:	ẢNH VECTOR SINH BỞI HÀM TOÁN HỌC
+- SVG: XEM  BẰNG TRÌNH DUYỆT. ĐẰNG SAU BỨC ẢNH , HẬU TRƯỜNG ẢNH, BẰNG TEXT VỚI TAG BẮT ĐẦU BẰNG <SVG>...</SVG>. ẢNH LÀ 1 ĐỐNG CÁC TAG ĐƯỢC RENDER BỞI TRÌNH DUYỆT
+NHỮNG WEB EDITOR TOOL: VS CODE CŨNG  ĐỌC ĐƯỢC SVG
+
+- SVG LÀ 1 CHUẨN ẢNH MÀ NỘI DUNG CỦA ẢNH ĐƯỢC MÔ TẢ, ĐƯỢC TẠO BỚI CÁC TAG, ẢNH ĐƯỢC TẠO BẰNG TAG!!!
+KHỞI  ĐẦU BẰNG TAG <SVG></SVG> , SAU  ĐÓ TRÌNH DUYỆT ĐỌC CÁC TAG <SVG> VÀ RENDER RA ẢNH
+
+- MỌI TRÌNH DUYỆT ĐỀU CÓ 1 ENGINE HIỂU ĐƯỢC SVG
+
+- CÁC TAG CỦA ẢNH SVG ĐƯỢC CHUẨN HÓA BỞI W3C (World Wide Web Consortium)
+
+- XEM SOURCE CỦA ẢNH SVG THÌ TOÀN THẤY LÀ TEXT DẠNG HTML, BẮT ĐẦU BẰNG <SVG> <SVG>
+- <SVG> CÓ THỂ NHÚNG VÀO TAG HTML ĐƯỢC LUÔN ...
+
+- TA CÓ THỂ NHỜ AI GENERATE ẢNH SVG NÀY!!!
 
 
 
@@ -61,6 +263,49 @@ NODE PACKAGE EXECUTE
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 
 
